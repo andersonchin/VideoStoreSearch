@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Search</title>
+  <meta charset = 'UTF-8'>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" crossorigin="anonymous"> <!--using css for table from prac8 actors-->
+  <script src = "/javascripts/search.js" defer></script>
+</head>
+
+<body>
+  <div>
+      <h1>
+          Search Video Games
+      </h1>
+  </div>
+  <div id = "search">
+      <form id="form">
+          <!--<div class = select>-->
+            <label for="Genre">Genre</label>
+              <select name="Genre" id="Genre" required>
+
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="FPS">FPS</option>
+                  <option value="Survival">Survival</option>
+                  <option value="Puzzle">Puzzle</option>
+              </select>
+          <!--</div>-->
+
+          <!--<div class = select>-->
+            <label for="Platform">Platform</label>
+              <select name="Platform" id="Platform">
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="PC">PC</option>
+                  <option value="Console">Console</option>
+              </select>
+          <!--</div>-->
+
+          <!--<div class = select>-->
+            <label for="Features">Features</label>
+              <select name="Features" id="Features">
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="Multiplayer">Online Multiplayer</option>
+                  <option value="Singleplayer Story">Singleplayer Story</option>
+                  <option value="Subtitles">Subtitles</option>
+              </select>
+          <!--</div>-->
+
+          <!--<div class = select>-->
+            <label for="Price">Price</label>
+              <select name="Price" id="Price">
+                  <option value="" disabled selected>Select your option</option>
+                  <option value="500">Any</option>
+                  <option value="25">Under $25</option>
+                  <option value="75">Under $75</option>
+              </select>
+          <!--</div>-->
+
+          <button type="submit" id="Submit" onclick="vueinst.show = true">Search</button>
+        </form>
+  </div>
+      <div id = "result" v-show="show">
+        <table style="width:100%" id = "table" class="pure-table pure-table-horizontal">
+          <thead >
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Platform</th>
+            <th>Feature</th>
+            <th>Price</th>
+          </thead>
+          <tbody id="tablebody">
+          </tbody>
+        </table>
+      </div>
+</body>
+
+</html>
